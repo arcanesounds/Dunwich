@@ -50,7 +50,7 @@ jobs:
 
         run: |
 
-          msbuild "Builds/VisualStudio2022/Azathoth.sln" /p:Configuration=Release /p:Platform=x64 /m
+          msbuild "Builds/VisualStudio2022/Dunwich.sln" /p:Configuration=Release /p:Platform=x64 /m
 
 
 
@@ -62,6 +62,6 @@ jobs:
 
         with:
 
-          name: Azathoth--Windows-VST3
+          name: Dunwich--Windows-VST3
 
           path: Builds/VisualStudio2022/x64/Release/VST3/*.vst3
