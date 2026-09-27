@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="fkVfVX" name="Dunwich" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" version="1.0.1"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" version="1.0.2"
               companyName="Arcane Sounds" pluginManufacturerCode="Arcn" pluginCode="Dwch">
   <MAINGROUP id="f7TMGn" name="Dunwich">
     <GROUP id="{07860D3D-2E5B-D9FF-0333-BA47C81F8F85}" name="Source">

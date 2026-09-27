@@ -1235,7 +1235,6 @@ class mydsp : public dsp {
 	float fConst33;
 	float fConst34;
 	float fConst35;
-	FAUSTFLOAT fCheckbox2;
 	float fConst36;
 	float fConst37;
 	float fConst38;
@@ -1247,6 +1246,7 @@ class mydsp : public dsp {
 	float fConst44;
 	float fConst45;
 	float fConst46;
+	FAUSTFLOAT fCheckbox2;
 	float fConst47;
 	float fConst48;
 	float fConst49;
@@ -1579,7 +1579,7 @@ class mydsp : public dsp {
 		fConst96 = (fConst94 + -1.4142135f) / fConst93 + 1.0f;
 		fConst97 = 2.0f * (1.0f - 1.0f / mydsp_faustpower2_f(fConst93));
 		fConst98 = (fConst41 - fConst43) / fConst40 + 1.0f;
-		fConst99 = 1002.9282f / fConst42;
+		fConst99 = 710.0188f / fConst42;
 		fConst100 = (fConst41 + fConst99) / fConst40 + 1.0f;
 		fConst101 = (fConst41 - fConst99) / fConst40 + 1.0f;
 		fConst102 = 1.0f / (fConst36 * fConst44);
@@ -1870,7 +1870,7 @@ class mydsp : public dsp {
 			fRec9[0] = -(fConst38 * (fConst39 * fRec9[1] - fConst45 * (fTemp13 + fVec7[1])));
 			fRec31[0] = -(fConst38 * (fConst39 * fRec31[1] - fConst102 * (fTemp13 - fVec7[1])));
 			fRec32[0] = fSlow36 + fConst86 * fRec32[1];
-			float fTemp14 = 16.0f * ((iSlow2) ? fConst45 * fTemp13 : fRec9[0] + 1.4125376f * fRec31[0]) * std::pow(1e+01f, 0.05f * (24.0f * (fRec32[0] + -0.5f) + -3e+01f));
+			float fTemp14 = 16.0f * (fRec9[0] + 1.4125376f * fRec31[0]) * std::pow(1e+01f, 0.05f * (24.0f * (fRec32[0] + -0.5f) + -3e+01f));
 			float fTemp15 = ((iSlow1) ? 0.0f : fTemp14);
 			fVec8[0] = fTemp15;
 			fRec8[0] = fConst2 * (fTemp15 - fVec8[1] + fConst3 * fRec8[1]);
