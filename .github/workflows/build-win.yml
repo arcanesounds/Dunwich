@@ -1,0 +1,67 @@
+name: Build VST3 per Windows
+
+
+
+on:
+
+  push:
+
+    branches: [ main ]
+
+  pull_request:
+
+    branches: [ main ]
+
+
+
+jobs:
+
+  build-windows:
+
+    runs-on: windows-2022
+
+
+
+    steps:
+
+      # 1. Recupera il codice sorgente dal repository (inclusi eventuali sottomoduli)
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v4
+
+        with:
+
+          submodules: recursive
+
+
+
+      # 2. Configura il motore di build di Visual Studio (MSBuild)
+
+      - name: Configura MSBuild
+
+        uses: microsoft/setup-msbuild@v2
+
+
+
+      # 3. Compila la soluzione Visual Studio del plugin in modalità Release x64
+
+      - name: Compila il plugin in versione Release (x64)
+
+        run: |
+
+          msbuild "Builds/VisualStudio2022/Azathoth.sln" /p:Configuration=Release /p:Platform=x64 /m
+
+
+
+      # 4. Carica l'artefatto VST3 compilato per poterlo scaricare dalla pagina delle Actions
+
+      - name: Carica l'Artefatto Compilato
+
+        uses: actions/upload-artifact@v4
+
+        with:
+
+          name: Azathoth--Windows-VST3
+
+          path: Builds/VisualStudio2022/x64/Release/VST3/*.vst3
